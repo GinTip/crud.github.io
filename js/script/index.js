@@ -33,7 +33,7 @@ let editarFormulario = (parIndex) => {
     document.getElementById('nameObj').value = itemsAlmacenados[parIndex].nameObj;
     document.getElementById('numberObj').value = itemsAlmacenados[parIndex].numberObj;
 }
-
+//
 let actualizarRegistro = () => {
     let position = document.getElementById('position').value;
     let nameObj = document.getElementById('nameObj').value;
@@ -53,12 +53,12 @@ let actualizarRegistro = () => {
     localStorage.setItem('itemsls', JSON.stringify(itemsAlmacenados));
     mostrarItems();
 }
-
+// Agregar al registro
 let agregarRegistro = () => {
     itemsLS = JSON.parse(localStorage.getItem('itemsls'));
     const nuevoItem = {
         nameObj: document.getElementById('nameObj').value,
-        numberObj: document.getElementById('numberObj').value
+        numberObj: document.getElementById('numberObj').value  
     }
     document.getElementById('nameObj').value = '';
     document.getElementById('numberObj').value = '';
@@ -66,13 +66,12 @@ let agregarRegistro = () => {
     localStorage.setItem('itemsls', JSON.stringify(itemsLS));
     mostrarItems();
 }
-
+// Liampiar caché
 let clearCache = () => {
     localStorage.clear();
     if (confirm('Se borran la lista de manera definitva')) {
-        } else {
-        }
+    } else {
+    }
     mostrarItems();
 }
-
 mostrarItems();
