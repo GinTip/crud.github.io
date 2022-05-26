@@ -35,14 +35,17 @@
                 </br>
                 <form class="row g-3">
                     <div class="col-auto">
-                        <input type="text" class="form-control" id="nombreObj" placeholder="Nombre">
+                        <label for="nameUser" class="visually-hidden">Nombre</label>
+                        <input type="text" class="form-control" id="nameUser" placeholder="Nombre">
+                        <input type="hidden" id="position">
                     </div>
                     <div class="col-auto">
-                        <input type="text" class="form-control" id="cantidad" placeholder="Cantidad">
+                        <label for="age" class="visually-hidden">Cantidad</label>
+                        <input type="text" class="form-control" id="age" placeholder="Cantidad">
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-success" onclick="agregarNombre()">Agregar</button>
-                        <button type="submit" class="btn btn-warning" onclick="actualizarRegistro()">Actualizar</button>
+                        <button type="button" class="btn btn-success" onclick="agregarRegistro()">Agregar</button>
+                        <button type="button" class="btn btn-warning" onclick="actualizarRegistro()">Actualizar</button>
                     </div>
                 </form>
             </div>
@@ -53,7 +56,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Elemento</th>
+                        <th scope="col">Nombre</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Acciones</th>
                     </tr>
@@ -71,5 +74,4 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
 </body>
-
 </html>
