@@ -1,17 +1,15 @@
-alumnos = [
+items = []
 
-]
-
-let mostrarAlumnos = (alumnosRecibidos) => {
+let mostrarItems = (itemsRecibidos) => {
     document.getElementsByTagName("tbody")[0].innerHTML = '';
-    alumnosRecibidos.forEach((element, index) => {
+    itemsRecibidos.forEach((element, index) => {
         let texth1 = document.createElement("tr");
         texth1.innerHTML =
             `<td scope="row">${index + 1}</td>
-            <td>${element.name}</td>
-            <td>${element.age}</td>
+            <td>${element.nameObj}</td>
+            <td>${element.numberObj}</td>
             <td>
-                <button type="button" class="btn btn-success" onclick="rellenarFormulario(${index})">Editar</button>
+                <button type="button" class="btn btn-success" onclick="editarFormulario(${index})">Editar</button>
                 <button type="button" class="btn btn-warning" onclick="eliminarRegistro(${index})">Eliminar</button>
             </td>`;
             document.getElementsByTagName("tbody")[0].appendChild(texth1);
@@ -19,45 +17,45 @@ let mostrarAlumnos = (alumnosRecibidos) => {
 }
 
 let eliminarRegistro = (parIndex) => {
-    alumnos = alumnos.filter((alumno, index) => index !== parIndex);
-    mostrarAlumnos(alumnos);
+    items = items.filter((item, index) => index !== parIndex);
+    mostrarItems(items);
 }
 
-let rellenarFormulario = (parIndex) => {
+let editarFormulario = (parIndex) => {
     document.getElementById('position').value = parIndex;
-    document.getElementById('nameUser').value = alumnos[parIndex].name;
-    document.getElementById('age').value = alumnos[parIndex].age;
+    document.getElementById('nameObj').value = items[parIndex].nameObj;
+    document.getElementById('numberObj').value = items[parIndex].numberObj;
 }
 
 let actualizarRegistro = () => {
     let position = document.getElementById('position').value;
-    let name = document.getElementById('nameUser').value;
-    let age = document.getElementById('age').value;
+    let nameObj = document.getElementById('nameObj').value;
+    let numberObj = document.getElementById('numberObj').value;
 
     if (position == '' || isNaN(position)) {
         alert('Debe seleccionar un registro de la lista');
         return false;
     }
 
-    alumnos[position] = {
-        name: name,
-        age: age
+    items[position] = {
+        nameObj: nameObj,
+        numberObj: numberObj
     }
     document.getElementById('position').value = '';
-    document.getElementById('name').value = '';
-    document.getElementById('age').value = '';
-    mostrarAlumnos(alumnos);
+    document.getElementById('nameObj').value = '';
+    document.getElementById('numberObj').value = '';
+    mostrarItems(items);
 }
 
 let agregarRegistro = () => {
-    console.log(`Agergar`);
-    const nuevoAlumno = {
-        name: document.getElementById('nameUser').value,
-        age: document.getElementById('age').value
+    console.log(`Agregar`);
+    const nuevoItem = {
+        nameObj: document.getElementById('nameObj').value,
+        numberObj: document.getElementById('numberObj').value
     }
-    document.getElementById('nameUser').value = '';
-    document.getElementById('age').value = '';
-    alumnos.push(nuevoAlumno);
-    mostrarAlumnos(alumnos);
+    document.getElementById('nameObj').value = '';
+    document.getElementById('numberObj').value = '';
+    items.push(nuevoItem);
+    mostrarItems(items);
 }
-mostrarAlumnos(alumnos);
+mostrarItems(items);
