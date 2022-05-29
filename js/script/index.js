@@ -75,13 +75,15 @@ let agregarRegistro = () => {
     }
     if (nameObj.value === null || nameObj.value === '') {
         swal("Oops! Debes llenar todos los campos", {
-            buttons: false,
+            button: "Ok",
+            dangerMode: true
         });
         return false;
     }
     if (numberObj.value === null || numberObj.value === '') {
         swal("Oops! Debes llenar todos los campos", {
-            buttons: false,
+            button: "Ok",
+            dangerMode: true
         });
         return false;
     }
