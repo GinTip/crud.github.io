@@ -14,12 +14,11 @@ let mostrarItems = () => {
             <td>${element.numberObj}</td>
             <td>
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        </td>
+            </td>
             <td>
                 <button type="button" class="btn btn-success" onclick="editarFormulario(${index})">Editar</button>
                 <button type="button" class="btn btn-warning" onclick="eliminarRegistro(${index})">Eliminar</button>
-            </td>
-`
+            </td>`
         document.getElementsByTagName("tbody")[0].appendChild(action1);
     });
 }
