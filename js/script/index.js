@@ -16,7 +16,7 @@ let mostrarItems = () => {
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             </td>
             <td>
-                <button type="button" class="btn btn-success" onclick="editarFormulario(${index})">Editar</button>
+                <button type="button" class="btn btn-warning" onclick="editarFormulario(${index})">Editar</button>
                 <button type="button" class="btn btn-danger" onclick="eliminarRegistro(${index})">Eliminar</button>
             </td>`
         document.getElementsByTagName("tbody")[0].appendChild(action1);
