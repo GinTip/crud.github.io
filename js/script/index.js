@@ -17,7 +17,7 @@ let mostrarItems = () => {
             </td>
             <td>
                 <button type="button" class="btn btn-success" onclick="editarFormulario(${index})">Editar</button>
-                <button type="button" class="btn btn-warning" onclick="eliminarRegistro(${index})">Eliminar</button>
+                <button type="button" class="btn btn-danger" onclick="eliminarRegistro(${index})">Eliminar</button>
             </td>`
         document.getElementsByTagName("tbody")[0].appendChild(action1);
     });
